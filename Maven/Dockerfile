@@ -2,8 +2,11 @@
 FROM artifactory.domain.com:443/domain-docker-remote/alpine:3.20
 
 # Set environment variables
-ENV DEBIAN_FRONTEND nointeractive   # Prevents interactive prompts during package installs
-ENV HOME /home/jenkins              # Defines Jenkins user's home directory
+
+# Prevents interactive prompts during package installs
+ENV DEBIAN_FRONTEND nointeractive   
+ # Defines Jenkins user's home directory
+ENV HOME /home/jenkins             
 
 # Create jenkins group (GID 1000) and jenkins user (UID 1000) with home directory
 RUN addgroup -g 1000 jenkins && \
